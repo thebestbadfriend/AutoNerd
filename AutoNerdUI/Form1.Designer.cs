@@ -30,11 +30,12 @@
         {
             tcMain = new TabControl();
             tcMain_Page1 = new TabPage();
-            lboPCInfo = new ListBox();
-            tcMain_Page2 = new TabPage();
+            dgvPCInfo = new DataGridView();
             btnRefreshPCInfo = new Button();
+            tcMain_Page2 = new TabPage();
             tcMain.SuspendLayout();
             tcMain_Page1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPCInfo).BeginInit();
             SuspendLayout();
             // 
             // tcMain
@@ -50,8 +51,8 @@
             // tcMain_Page1
             // 
             tcMain_Page1.BackColor = Color.DimGray;
+            tcMain_Page1.Controls.Add(dgvPCInfo);
             tcMain_Page1.Controls.Add(btnRefreshPCInfo);
-            tcMain_Page1.Controls.Add(lboPCInfo);
             tcMain_Page1.Location = new Point(4, 24);
             tcMain_Page1.Name = "tcMain_Page1";
             tcMain_Page1.Padding = new Padding(3);
@@ -59,14 +60,28 @@
             tcMain_Page1.TabIndex = 0;
             tcMain_Page1.Text = "Tell Me About My PC";
             // 
-            // lboPCInfo
+            // dgvPCInfo
             // 
-            lboPCInfo.FormattingEnabled = true;
-            lboPCInfo.ItemHeight = 15;
-            lboPCInfo.Location = new Point(6, 9);
-            lboPCInfo.Name = "lboPCInfo";
-            lboPCInfo.Size = new Size(615, 619);
-            lboPCInfo.TabIndex = 0;
+            dgvPCInfo.AllowUserToAddRows = false;
+            dgvPCInfo.AllowUserToDeleteRows = false;
+            dgvPCInfo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvPCInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPCInfo.Location = new Point(6, 9);
+            dgvPCInfo.Name = "dgvPCInfo";
+            dgvPCInfo.ReadOnly = true;
+            dgvPCInfo.RowHeadersVisible = false;
+            dgvPCInfo.RowTemplate.Height = 25;
+            dgvPCInfo.Size = new Size(615, 616);
+            dgvPCInfo.TabIndex = 2;
+            // 
+            // btnRefreshPCInfo
+            // 
+            btnRefreshPCInfo.Location = new Point(627, 9);
+            btnRefreshPCInfo.Name = "btnRefreshPCInfo";
+            btnRefreshPCInfo.Size = new Size(131, 49);
+            btnRefreshPCInfo.TabIndex = 1;
+            btnRefreshPCInfo.Text = "Refresh";
+            btnRefreshPCInfo.UseVisualStyleBackColor = true;
             // 
             // tcMain_Page2
             // 
@@ -78,15 +93,6 @@
             tcMain_Page2.TabIndex = 1;
             tcMain_Page2.Text = "Help Me Fix My PC";
             // 
-            // btnRefreshPCInfo
-            // 
-            btnRefreshPCInfo.Location = new Point(627, 9);
-            btnRefreshPCInfo.Name = "btnRefreshPCInfo";
-            btnRefreshPCInfo.Size = new Size(131, 49);
-            btnRefreshPCInfo.TabIndex = 1;
-            btnRefreshPCInfo.Text = "Refresh";
-            btnRefreshPCInfo.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -97,6 +103,7 @@
             Text = "Auto Nerd";
             tcMain.ResumeLayout(false);
             tcMain_Page1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvPCInfo).EndInit();
             ResumeLayout(false);
         }
 
@@ -105,7 +112,7 @@
         private TabControl tcMain;
         private TabPage tcMain_Page1;
         private TabPage tcMain_Page2;
-        private ListBox lboPCInfo;
         private Button btnRefreshPCInfo;
+        private DataGridView dgvPCInfo;
     }
 }
